@@ -1,0 +1,16 @@
+{
+    "name": "icanpreneur",
+    "version": "1.0.1",
+    "description": "Talk to your Buyer Persona",
+    "author": {
+        "name": "Icanpreneur",
+        "url": "https://www.icanpreneur.com/"
+    },
+    "homepage": "https://www.icanpreneur.com/",
+    "displayName": "Icanpreneur",
+    "icon": "./assets/logo.png",
+    "documentationUrl": "https://www.icanpreneur.com/",
+    "supportUrl": "https://www.icanpreneur.com/docs/",
+    "privacyPolicyUrl": "https://platform.icanpreneur.com/legal/privacy-policy",
+    "termsOfServiceUrl": "https://platform.icanpreneur.com/legal/terms-of-use"
+}
