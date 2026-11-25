@@ -8,7 +8,7 @@ Use when the user names respondents to interview.
 2. **Interviews.** `create_interview(ideaId, contactId, researchId, languageTag, aiLed?, hostId?)`.
     - `aiLed` defaults to true: Icanpreneur's interviewer runs it through a link. `aiLed: false` is for an interview a person hosts; only human-led interviews default `hostId` to the authenticated user.
     - With `researchId`, the interview uses the research's script. A compatible `scriptId` overrides it for this interview only. Without `researchId`, `scriptId` is required and the interview is standalone.
-    - The result includes `aiLedInterviewUrl`, specific to that contact, for AI-led interviews. `languageTag` is required and must support interviewing. Do not supply a host for an AI-led interview.
+    - Use the research language unless asked otherwise.
 3. **Give the user the links.** A table works: name, interview ID, link. Say clearly that nothing has been sent. They share the link themselves.
 4. The research also has one general link: `get_research` → `aiLedInterviewUrl`. It is returned even when AI-led interviews are switched off, so check `aiLedInterviewsEnabled` before giving it out.
 5. Interviews move `NotStarted` → `InProgress` → `Completed`. Analysis starts after they complete. Only nonsynthetic `NotStarted` interviews can be edited (`update_interview`: delivery mode, host, meeting code, script, language). Imports created here are already `Completed`.
@@ -35,7 +35,7 @@ Use for "turn my existing interviews into a persona" when they are already saved
 
 1. Create BuyerPersona research for the segment (needs a script of type `BuyerPersona`; reuse or generate one).
 2. `list_interviews(notInResearchId: <research id>, customerSegmentId: <segment id>)`. Interviews of other types can be added, for example problem-validation interviews. The `customerSegmentId` filter only narrows the list; it is not a rule about which interviews can join. When reorganizing evidence into a new segment's research, do not filter by the new segment's ID, or you will hide the interviews you are looking for.
-3. Show the candidates (title, interviewee, type, `synthetic`, `imported`, stage). Add the ones the user picks with `update_research_interviews(idsToAdd: [...])`. Removing (`idsToRemove`) only unlinks; it does not delete the interview.
+3. Show the candidates (title, interviewee, type, `synthetic`, `imported`, stage). Use `update_research_interviews` for the interviews the user picks.
 4. Adding interviews starts a refresh of the analysis and the persona. Wait as usual.
 
 ## D. Synthetic interviews and contacts

@@ -37,12 +37,16 @@ Notes, exports, team access and questions about saved work need only this skill.
 - Find the workspace with `list_ideas`. `ideaId` is the idea's `uniqueId`. Archived workspaces need `includeArchived`. Ask if several match. Read before you write; reads are free.
 - Use the workspace language (`get_idea`) unless asked otherwise. Check `list_supported_languages` for another.
 - Paged lists default to 20 items. Page with `take` and `skip` to `totalCount` before counting or concluding something is missing. Research insights, quality, members, invitations, languages and credit costs are unpaged; send only their supported fields.
-- A customer segment is a Canvas `CustomerSegments` item. A Buyer Persona is created only by `BuyerPersona` research. A positioning document's `id` is the `positioningDocumentId`. Full table: [references/ids-and-fields.md](references/ids-and-fields.md).
+- A customer segment is a Canvas `CustomerSegments` item. A Buyer Persona is created only by `BuyerPersona` research. A competitive assessment's `id` is the `competitiveAssessmentDocumentId`, and a positioning document's `id` is the `positioningDocumentId`. Full table: [references/ids-and-fields.md](references/ids-and-fields.md).
 - Updates leave omitted fields unchanged, but `sections`, `text`, `relatedItemIds` and `customerSegmentIds` replace the whole value. Read, change, send the full result.
 - An interview's `stage` is separate from analysis `status` (`NotStarted`, `Pending`, `Complete`, `Error`). `updatedOn` is a modification timestamp, not a completion time. Research reads select the latest attempt, which can be partial or absent. Persona `Complete` alone is insufficient: an empty persona can be Complete. Positioning generation requires Complete and a nonempty description. Details: [references/billing-and-async.md](references/billing-and-async.md).
 - `create_contact` records real people only. Never use it for simulated or "modeled on" people.
 - `upload_file` needs the real bytes in `contentBase64`; never rebuild them from a summary. Transcripts cannot be passed as text.
 - Research evidence, quotes and supporting counts come from `list_research_insights`, which returns all categories. There is no separate per-insight read tool.
+
+## Feedback
+
+Use `submit_feedback` for user-requested feedback or to propose a report when the MCP server or plugin malfunctions. Before sending, show the proposed report and ask for explicit confirmation. For agent-initiated feedback, tell the user that the agent proposed the report and record in `context` that the user approved sending it but did not request it. If submission fails, tell the user instead of recursively reporting the failure.
 
 ## Reporting
 

@@ -2,24 +2,24 @@
 
 ## Where each ID comes from
 
-| Thing                | Get it from                                                                                | Pass it as                                                                                         |
-| -------------------- | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- |
-| Workspace (idea)     | `list_ideas`, `get_idea`, `create_idea`: `uniqueId`                                        | `ideaId` (string)                                                                                  |
-| Canvas item          | `get_canvas`: item `id`                                                                    | `itemId` together with `box`                                                                       |
-| Customer segment     | `get_canvas`, box `CustomerSegments`: item `id`                                            | `customerSegmentId`; also inside `relatedItemIds` of other items; `customerSegmentIds` on contacts |
-| Interview script     | `list_interview_scripts`, `generate_interview_script`: `id`                                | `scriptId` (interviews, script tools); `interviewScriptId` (research tools)                        |
-| Research             | `list_research`, `create_research`: `id`                                                   | `researchId`                                                                                       |
-| Buyer Persona        | `list_buyer_personas`: `id`; also `buyerPersonaId` on BuyerPersona research once available | `buyerPersonaId`                                                                                   |
-| Persona conversation | `ask_buyer_persona`: `conversationId`                                                      | `conversationId` for follow-ups                                                                    |
-| Interview            | `list_interviews`, `create_interview`, `import_interview`: `id`                            | `interviewId`                                                                                      |
-| Contact              | `list_contacts`, `create_contact`: `id`                                                    | `contactId`                                                                                        |
-| Research insight     | `list_research_insights`: category/insight `id` and full supporting evidence               | Identify the saved finding in your answer; there is no per-insight read tool.                      |
-| Persona document     | `list_buyer_persona_documents`, `generate_*`: `id`                                         | `buyerPersonaDocumentId`; for a `PositioningAndMessaging` document also `positioningDocumentId`    |
-| Note                 | `list_notes`, `create_note`: `id`                                                          | `noteId`                                                                                           |
-| Idea member          | `list_idea_members`: `members[].user.userId` (string)                                     | `userId`                                                                                           |
-| Idea invitation      | `list_idea_invites`: `id`                                                                  | `inviteId`                                                                                         |
-| Host                 | `members[].user.userId` from `list_idea_members`                                           | `hostId` (string)                                                                                  |
-| Uploaded file        | `upload_file`: `fileKey` (string)                                                          | `fileKey`, `fileKeys`, `scriptFileKey`, `logoFileKey`                                              |
+| Thing                | Get it from                                                                                | Pass it as                                                                                                                                                                     |
+| -------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Workspace (idea)     | `list_ideas`, `get_idea`, `create_idea`: `uniqueId`                                        | `ideaId` (string)                                                                                                                                                              |
+| Canvas item          | `get_canvas`: item `id`                                                                    | `itemId` together with `box`                                                                                                                                                   |
+| Customer segment     | `get_canvas`, box `CustomerSegments`: item `id`                                            | `customerSegmentId`; also inside `relatedItemIds` of other items; `customerSegmentIds` on contacts                                                                             |
+| Interview script     | `list_interview_scripts`, `generate_interview_script`: `id`                                | `scriptId` (interviews, script tools); `interviewScriptId` (research tools)                                                                                                    |
+| Research             | `list_research`, `create_research`: `id`                                                   | `researchId`                                                                                                                                                                   |
+| Buyer Persona        | `list_buyer_personas`: `id`; also `buyerPersonaId` on BuyerPersona research once available | `buyerPersonaId`                                                                                                                                                               |
+| Persona conversation | `ask_buyer_persona`: `conversationId`                                                      | `conversationId` for follow-ups                                                                                                                                                |
+| Interview            | `list_interviews`, `create_interview`, `import_interview`: `id`                            | `interviewId`                                                                                                                                                                  |
+| Contact              | `list_contacts`, `create_contact`: `id`                                                    | `contactId`                                                                                                                                                                    |
+| Research insight     | `list_research_insights`: category/insight `id` and full supporting evidence               | Identify the saved finding in your answer; there is no per-insight read tool.                                                                                                  |
+| Persona document     | `list_buyer_persona_documents`, `generate_*`: `id`                                         | `buyerPersonaDocumentId`; for a `CompetitiveAssessment` document also `competitiveAssessmentDocumentId`; for a `PositioningAndMessaging` document also `positioningDocumentId` |
+| Note                 | `list_notes`, `create_note`: `id`                                                          | `noteId`                                                                                                                                                                       |
+| Idea member          | `list_idea_members`: `members[].user.userId` (string)                                      | `userId`                                                                                                                                                                       |
+| Idea invitation      | `list_idea_invites`: `id`                                                                  | `inviteId`                                                                                                                                                                     |
+| Host                 | `members[].user.userId` from `list_idea_members`                                           | `hostId` (string)                                                                                                                                                              |
+| Uploaded file        | `upload_file`: `fileKey` (string)                                                          | `fileKey`, `fileKeys`, `scriptFileKey`, `logoFileKey`                                                                                                                          |
 
 `relatedDocuments` on a document lists the documents it was generated **from**, not documents generated from it.
 
@@ -44,8 +44,8 @@ Interview details come in two shapes. Standard interviews have `scriptId` and `t
 
 | Tool field                                                          | `usage` to upload with              |
 | ------------------------------------------------------------------- | ----------------------------------- |
-| `create_idea.fileKeys`                                             | `IdeaCreationDocument`              |
-| `ask_buyer_persona.fileKeys`                                       | `ChatFile`                          |
+| `create_idea.fileKeys`                                              | `IdeaCreationDocument`              |
+| `ask_buyer_persona.fileKeys`                                        | `ChatFile`                          |
 | `create_idea.logoFileKey`, `update_idea.logoFileKey`                | `IdeaLogo`                          |
 | `import_interview.fileKey`, `import_interviews.fileKeys`            | `InterviewTranscript`               |
 | `import_interview.scriptFileKey`, `import_interviews.scriptFileKey` | `ImportedInterviewScriptAttachment` |
