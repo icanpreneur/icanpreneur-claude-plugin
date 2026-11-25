@@ -6,7 +6,7 @@ Editing the Markdown is free. Regenerating costs credits and makes a new documen
 
 - `update_buyer_persona_document(ideaId, buyerPersonaDocumentId, name?, text?)`: `text` replaces the entire Markdown. Read the document, change the text, send the full result. Keep its headings and structure. Change only what the user asked.
 - A landing page or deck does not update when its positioning changes later. To carry a change over, generate a new page or deck from the edited positioning (billable) and keep or delete the old one. A persona update never rewrites a document either.
-- `duplicate_buyer_persona_document` makes a free copy for a variant. Source snapshots remain uneditable when duplicated.
+- Use `duplicate_buyer_persona_document` for a free variant. Source snapshots remain uneditable when duplicated.
 
 ## What an edit may add
 
@@ -21,7 +21,7 @@ Editing the Markdown is free. Regenerating costs credits and makes a new documen
 
 - Landing page → a web page (a preview, not a live site). Sales deck → a new Google Slides presentation with a new link every time. Do not say older presentations were removed. The saved preview record points to the latest output; old external presentations are not removed by this generation path.
 - A preview can lag behind later edits. Finish the edits first, then regenerate once. Regenerate a preview the user did not ask to refresh only after asking.
-- Preview state is separate from document state: wait for `preview.ready`, then use `preview.url`. If `preview.error` is true, report it and ask before retrying.
+- Wait for the requested preview to finish independently of document generation. If it fails, report the failure and ask before retrying.
 - Give the link. Do not say who can open it; the tools do not tell you.
 - If still pending after a few checks, return the IDs and what to check next. Do not regenerate to find out.
 

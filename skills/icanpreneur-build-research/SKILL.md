@@ -25,7 +25,7 @@ Ask only when a choice is missing: segment, research type, language, script dura
 
 ## 1. Workspace
 
-`create_idea` needs `title`, `startingPoint` (`idea` or `existingBusiness`; ask if unclear), `languageTag`, and a `description`, `urls` or `fileKeys`. A logo is not context. Do not invent a description. If the user has no idea yet, finding one is not a tool; talk it through and create the workspace once there is a description.
+Use the user's business context to create the workspace. Ask whether this is a new idea or an existing business when unclear. If the user has no idea yet, help clarify it before creating a workspace; do not invent their business description.
 
 - Call it once; never again to check. `create_idea` creates the initial Canvas during the call. After success, read `get_canvas` immediately; no separate readiness field or Canvas poll is needed. Logo generation may still run. A timeout or error can leave partial saved work; inspect before any retry. The Canvas is a first draft of hypotheses: show the segments and problems and invite corrections.
 - A distinct growth opportunity may suit its own workspace so the current business is undisturbed. Another segment, problem or pricing question within the business stays in the current workspace. Ask if unclear.

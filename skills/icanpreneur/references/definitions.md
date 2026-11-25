@@ -6,14 +6,16 @@ The Canvas has nine boxes: `CustomerSegments`, `Problem`, `Solution`, `UniqueVal
 
 ## Customer Segment (`CustomerSegments`)
 
-A group of customers similar enough that:
+An identifiable group of customers who share a **Job-to-be-Done** or a common set of needs in a relevant situation. A well-defined segment:
 
-1. They need the same **Job-to-be-Done** and share needs, wants, behaviors or other attributes.
-2. The same product or service appeals to all of them.
-3. The same message and marketing channels can reach them.
-4. Word of mouth exists between them, so they can be strong references for each other.
+1. Identifies the people to target and the characteristics, circumstances or activities that distinguish the group and the situation in which the shared need arises.
+2. Includes customers to whom the same product or service would appeal.
+3. Can be reached with common messaging and marketing channels.
+4. Has word of mouth between its members, so they can be strong references for one another.
 
-Also check that the segment is likely to care about the problem and willing to pay for a solution, and is defined by more than a job title or role. How to apply it: "small business owners" or "millennials" usually fails tests 1 and 3. When a user gives a broad group, ask what job they are trying to get done and how you would reach them, then propose narrower candidates. Do not create several segments from one vague sentence. One research project belongs to one segment.
+Describe the group concretely, using the few characteristics needed to distinguish it from other customers. These may include responsibilities, organizational or personal context, activities or current ways of working. Include a characteristic because it defines who is in the group, not only because you assume it makes them better customers. An initial segment is a hypothesis that gets more precise as the user learns from customers.
+
+Also check that the segment is likely to pay to meet these needs, and names the people or roles to target, not just their organizations. How to apply it: "small business owners" or "millennials" usually has no shared Job-to-be-Done and fails tests 1 and 3. When a user gives a broad group, ask what job they are trying to get done and how you would reach them, then propose narrower candidates. Do not create several segments from one vague sentence. One research project belongs to one segment.
 
 ## Job-to-be-Done
 
